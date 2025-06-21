@@ -1,0 +1,151 @@
+/*--------------------------------------------------------------------------------------------------------------------------------------------------
+MAIN BANNER 
+----------------------------------------------------------------------------------------------------------------------------------------------------*/
+.banner {
+	width: 100%;
+	max-width: var(--site-width);
+	margin-inline: auto;
+
+	height: auto;
+
+	position: relative; /* Важно для позиционирования псевдоэлементов */
+	overflow: hidden;
+
+	// Комбинированный фон для элемента banner
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		height: 100%;
+		/* Обеспечиваем, чтобы псевдоэлементы были под контентом */
+		z-index: -1;
+		@include lg {
+			content: none;
+			display: none;
+		}
+	}
+
+	&:before {
+		left: 0;
+		width: 39.3%;
+		background: #373042;
+		@media (max-width: 1660px) {
+			width: 37.5%;
+		}
+	}
+	&:after {
+		right: 0;
+		width: 60.7%;
+		background-image: url("../../images/main.png"); /* Ваше изображение */
+		background-size: cover; /* Или contain, или 100% 100% в зависимости от нужного поведения */
+		background-position: center; /* Центрируем изображение в его 60% области */
+		background-repeat: no-repeat;
+		@media (max-width: 1660px) {
+			width: 62.5%;
+		}
+	}
+
+	&_row {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		@include lg {
+			flex-wrap: wrap;
+		}
+	}
+
+	&_container {
+		@include lg {
+			padding-inline: 0;
+		}
+	}
+
+	&_left {
+		display: flex;
+		align-items: center;
+		width: 37.3%;
+
+		padding-top: 138px;
+		padding-bottom: 141px;
+
+		@include lg {
+			width: 100%;
+			background: #373042;
+			order: 2;
+
+			padding-top: 45px;
+			padding-bottom: 60px;
+
+			padding-inline: var(--container-padding);
+		}
+	}
+	&_leftbox {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding-right: 20px;
+		@include lg{
+			padding-right: 0;
+			gap: 17px;
+		}
+	}
+
+	&_right {
+		width: 62.6%;
+		height: 100%;
+
+		background-image: url("../../images/main.png"); /* Ваше изображение */
+		background-size: cover; /* Или contain, или 100% 100% в зависимости от нужного поведения */
+		background-position: center; /* Центрируем изображение в его 60% области */
+		background-repeat: no-repeat;
+		visibility: hidden;
+		@include lg {
+			width: 100%;
+			visibility: visible;
+			aspect-ratio: 14/9;
+			order: 1;
+		}
+	}
+
+	&_title {
+		@include xl {
+			font-size: 60px;
+			line-height: 89%;
+		}
+		@include lg {
+			font-size: 45px;			
+		}
+	}
+
+	&_phone {
+		font-family: var(--font-title);
+		font-weight: 500;
+		font-size: 30px;
+		letter-spacing: -0.04em;
+		color: #fff;
+
+		margin-top: 2px;
+		@include lg{
+			font-size: 24px;
+		}
+	}
+
+	&_text {
+		line-height: 120%;
+		color: #fff;
+		@include lg{
+			font-size: 18px;
+		}
+	}
+
+	.smallbtn {
+		align-self: flex-start;
+	}
+	.btn {
+		margin-top: 7px;
+		align-self: flex-start;
+		min-width: 180px;
+		text-align: center;
+	}
+}

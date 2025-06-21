@@ -1,0 +1,261 @@
+/*--------------------------------------------------------------------------------------------------------------------------------------------------
+HEADER 
+----------------------------------------------------------------------------------------------------------------------------------------------------*/
+.header {
+	width: 100%;
+	max-width: var(--site-width);
+	margin-inline: auto;
+
+	&_logo {
+		display: block;
+		width: 202px;
+		height: 60px;
+
+		flex-shrink: 0;
+
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			overflow: hidden;
+		}
+
+		@media (max-width: 1300px) {
+			width: 180px;
+			height: 53px;
+		}
+	}
+
+	&_row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		background-color: var(--color-white);
+		min-height: 155px;
+
+		@include lg{
+			min-height: 88px;
+		}
+	}
+
+	&_nav {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 85px;
+		margin-top: 5px;
+
+		@media (max-width: 1300px) {
+			gap: 40px;
+		}
+
+		@include lg {
+			display: none;
+		}
+	}
+	&_menu {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		gap: 50px;		
+
+		@media (max-width: 1300px) {
+			gap: 30px;
+		}
+
+		li {
+			a {
+				padding-block: 20px;				
+				transition: all 0.3s ease-in-out;
+				border-bottom: 1px solid transparent;
+
+				font-weight: 500;
+				font-size: 20px;
+				letter-spacing: -0.02em;
+				color: #373042;
+				transition: all 0.3s ease-in-out;
+
+				@media (max-width: 1300px) {
+					font-size: 18px;
+				}
+
+				&:focus {
+					border-bottom: 1px solid #7557ff;
+                    color: #7557ff;
+				}
+
+				&:hover {
+					color: #7557ff;
+				}
+			}
+		}
+	}
+
+	&_buttons {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 25px;
+		@media (max-width: 1300px) {
+			gap: 25px;
+		}
+	}
+
+	&_burger {
+		display: none;
+
+		align-items: center;
+		justify-content: center;
+
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: #373042;
+
+		@include lg {
+			display: flex;
+		}
+	}
+
+	&_mobile {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 50%;
+		height: 100%;
+		background-color: #fff;
+		transition: all 0.3s ease-in-out;
+
+		z-index: 1000;
+		&.active {
+			@include lg {
+				right: 0;
+			}
+            @include md{
+                width: 75%;
+            }
+            @include sm{
+                width: 90%;
+            }
+		}
+
+		&_nav {
+			display: flex;
+			flex-direction: column;
+
+			gap: 50px;
+
+			padding-inline: 50px;
+			margin-top: 150px;
+			margin-bottom: 50px;
+		}
+
+		&_menu {
+			li {
+				padding-block: 15px;
+				transition: all 0.3s ease-in-out;
+				border-bottom: 1px solid transparent;
+
+				&.active {
+					border-bottom: 1px solid #7557ff;
+					a {
+						color: #7557ff;
+					}
+				}
+
+				a {
+					font-weight: 500;
+					font-size: 20px;
+					letter-spacing: -0.02em;
+					color: #373042;
+					text-transform: uppercase;
+
+					transition: all 0.3s ease-in-out;
+
+					@media (max-width: 1300px) {
+						font-size: 18px;
+					}
+					&:hover {
+						color: #7557ff;
+					}
+				}
+			}
+		}
+
+		&_buttons {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			.btn {
+				width: 100%;
+			}
+		}
+
+		&_close {
+			position: absolute;
+			top: 50px;
+			left: 50px;
+
+			.outer {
+				position: relative;
+				margin: auto;
+				width: 70px;
+				cursor: pointer;
+			}
+
+			.inner {
+				width: inherit;
+				text-align: center;
+			}
+
+			label {
+				font-size: 1em;
+				line-height: 4em;
+				text-transform: uppercase;
+				color: #7557ff;
+				transition: all 0.3s ease-in;
+				opacity: 0;
+				cursor: pointer;
+			}
+
+			.inner:before,
+			.inner:after {
+				position: absolute;
+				content: "";
+				height: 1px;
+				width: inherit;
+				background: #7557ff;
+				left: 0;
+				transition: all 0.3s ease-in;
+			}
+
+			.inner:before {
+				top: 50%;
+				transform: rotate(45deg);
+			}
+
+			.inner:after {
+				bottom: 50%;
+				transform: rotate(-45deg);
+			}
+
+			.outer:hover label {
+				opacity: 1;
+			}
+
+			.outer:hover .inner:before,
+			.outer:hover .inner:after {
+				transform: rotate(0);
+			}
+
+			.outer:hover .inner:before {
+				top: 0;
+			}
+
+			.outer:hover .inner:after {
+				bottom: 0;
+			}
+		}
+	}
+}

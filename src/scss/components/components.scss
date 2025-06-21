@@ -1,0 +1,69 @@
+/*--------------------------------------------------------------------------------------------------------------------------------------------------
+COMPONENTS 
+----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.btn {
+	display: inline-block;
+	padding: 22px 39px;
+
+	border: 2px solid #7557ff;
+	border-radius: 40px;
+
+	font-weight: 500;
+	font-size: 20px;
+	letter-spacing: -0.02em;
+	transition: all 0.3s ease-in-out;
+
+	@media (max-width: 1300px) {
+		padding: 14px 22px;
+		font-size: 18px;
+	}
+
+	&_transparent {
+		color: #373042;
+		background-color: transparent;
+		&:hover {
+			color: #7557ff;
+		}
+	}
+	&_fill {
+		background-color: #373042;
+		color: white;
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+	&_sky {
+		background-color: #7557ff;
+		color: white;
+		&:hover {
+			box-shadow: 0 10px 30px 0 rgba(79, 61, 161, 0.4);
+		}
+	}
+}
+
+.smallbtn {
+	display: inline-flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 8px;
+
+	background-color: rgb(255, 255, 255, 0.15);
+	padding: 6px 16px;
+	border-radius: var(--radius);
+	img {
+		width: 18px;
+		height: 18px;
+	}
+	span {
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 141%;
+		letter-spacing: -0.04em;
+		color: #fff;
+		opacity: 0.8;
+		@include lg{
+			font-size: 16px;
+		}
+	}
+}

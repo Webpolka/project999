@@ -1,0 +1,46 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+TYPOGRAPHY
+--------------------------------------------------------------------------------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-title);
+}
+
+h1 {
+	font-weight: 500;
+	font-size: 70px;
+	line-height: 84%;
+	letter-spacing: -0.04em;
+	color: #fff;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 55px;
+	letter-spacing: -0.03em;
+	color: #373042;
+	@include lg{
+		font-size: 40px;
+	}
+}
+
+a {
+	transition: all 0.3s ease-in-out;
+}
+
+p {
+	font-family: var(--font-main);
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 140%;
+	letter-spacing: -0.04em;
+	color: #373042;
+	@include lg {
+		font-size: 18px;
+	}
+}
